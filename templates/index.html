@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Heart Failure Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <center>
+    <div class="container">
+        <h1>Heart Failure Prediction Form</h1>
+        <form method="POST" action="/predict">
+            <input type="number" name="age" placeholder="Age (e.g. 45–90)" required><br>
+
+<input type="number" name="anaemia" placeholder="Anaemia (1 = Yes, 0 = No)" required><br>
+
+<input type="number" name="creatinine_phosphokinase"
+       placeholder="Creatinine Phosphokinase (U/L, e.g. 20–8000)" required><br>
+
+<input type="number" name="diabetes" placeholder="Diabetes (1 = Yes, 0 = No)" required><br>
+
+<input type="number" name="ejection_fraction"
+       placeholder="Ejection Fraction % (e.g. 10–80)" required><br>
+
+<input type="number" name="high_blood_pressure"
+       placeholder="High Blood Pressure (1 = Yes, 0 = No)" required><br>
+
+<input type="number" name="platelets"
+       placeholder="Platelets (per mL, e.g. 100000–500000)" required><br>
+
+<input type="number" step="0.1" name="serum_creatinine"
+       placeholder="Serum Creatinine (mg/dL, e.g. 0.5–5.0)" required><br>
+
+<input type="number" name="serum_sodium"
+       placeholder="Serum Sodium (mEq/L, e.g. 120–150)" required><br>
+
+<input type="number" name="sex"
+       placeholder="Sex (1 = Male, 0 = Female)" required><br>
+
+<input type="number" name="smoking"
+       placeholder="Smoking (1 = Yes, 0 = No)" required><br>
+
+            <br><br>
+            <button type="submit">Predict</button>
+             &nbsp;&nbsp;
+            <button type="reset">Clear</button>
+        </form>
+    </div>
+    </center>
+
+
+    <!-- -------------------------------------------------- -->
+    <style>
+    body {
+        background-image: url("{{ url_for('static', filename='images/heart-bg.jpg') }}");
+        background-size: cover;
+        background-position: center;
+        font-family: 'Segoe UI', sans-serif;
+        color: white;
+    }
+    .container {
+        background-color: rgba(0, 0, 0, 0.7);
+        padding: 30px;
+        border-radius: 15px;
+        width: 50%;
+        margin-top: 50px;
+    }
+    input, button {
+        padding: 10px;
+        margin: 10px;
+        width: 80%;
+        border-radius: 8px;
+        border: none;
+    }
+    button {
+        background-color: #ff4d4d;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #ff1a1a;
+    }
+    </style>
+    <!-- <img src="{{ url_for('static', filename='images/heart-logo.png') }}" alt="Heart Logo" width="150" style="margin-top: 20px;"> -->
+
+</body>
+</html>
